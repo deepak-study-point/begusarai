@@ -17,7 +17,6 @@
         .notice-box h3 { margin-top: 0; color: #856404; display: flex; align-items: center; gap: 8px; }
         .notice-list { padding-left: 20px; margin-bottom: 0; }
         .notice-list li { margin-bottom: 10px; line-height: 1.5; font-size: 15px; }
-        .notice-link { color: #0056b3; font-weight: bold; text-decoration: underline; }
         
         .btn-group { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
         .btn { display: inline-block; padding: 12px 20px; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 15px; }
@@ -26,8 +25,11 @@
         .sms { background-color: #ff9900; }
         .form-btn { background-color: #673ab7; font-size: 18px; padding: 15px 30px; display: inline-block; }
         
-        .grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px; }
-        .grid-item { background: #eef2f5; padding: 12px 20px; border-radius: 6px; font-weight: bold; font-size: 16px; color: #003366; border-left: 4px solid #007bff; }
+        /* सब्जेक्ट कार्ड्स की स्टाइल */
+        .grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px; }
+        .subject-card { background: #ffffff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; width: 220px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .subject-card h4 { margin: 0 0 10px 0; color: #003366; font-size: 16px; }
+        .download-btn { display: inline-block; background-color: #28a745; color: white; padding: 8px 12px; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: bold; }
         
         iframe { width: 100%; height: 700px; border: none; border-radius: 8px; }
     </style>
@@ -45,7 +47,6 @@
             <h3>📢 महत्वपूर्ण सूचना / ताज़ा जानकारी (Notice Board)</h3>
             <ul class="notice-list">
                 <li>📌 <strong>नया बैच प्रारंभ:</strong> नए बैच की जानकारी के लिए तुरंत संपर्क करें।</li>
-                <li>📄 <strong>स्टडी मटेरियल / PDF लिंक:</strong> यहाँ क्लिक करके नया नोट्स डाउनलोड करें 👉 <a href="https://drive.google.com/file/d/1g-KYEV83gAlVI2U57daI1Y9IZqFyuuEs/view?usp=sharingm" target="_blank" class="notice-link">यहाँ क्लिक करें (Click Here)</a></li>
             </ul>
         </div>
     </div>
@@ -60,16 +61,36 @@
         </div>
     </div>
 
-    <!-- उपलब्ध विषय -->
+    <!-- 📚 विषय अनुसार स्टडी मटेरियल (PDFs) -->
     <div class="container">
-        <h2>📚 उपलब्ध विषय एवं तैयारी</h2>
+        <h2>📚 डाउनलोड करें विषयवार नोट्स (PDF)</h2>
         <div class="grid-container">
-            <div class="grid-item">📖 Mathematics (गणित)</div>
-            <div class="grid-item">🔬 Science (विज्ञान)</div>
-            <div class="grid-item">💡 Reasoning (तर्कशक्ति)</div>
-            <div class="grid-item">🌐 General Knowledge / GS</div>
-            <div class="grid-item">💻 Computer Science</div>
-            <div class="grid-item">🎯 Competitive Exams (Railway/SSC/BPSC)</div>
+            
+            <!-- Mathematics Box (आपका HCF & LCM PDF लिंक यहाँ लग गया है) -->
+            <div class="subject-card">
+                <h4>📖 Mathematics (गणित)</h4>
+                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">HCF & LCM Class Sheet</p>
+                <a href="https://drive.google.com/file/d/1g-KYEV83gAlVI2U57daI1Y9IZqFyuuEs/view?usp=sharing" target="_blank" class="download-btn">📥 PDF डाउनलोड करें</a>
+            </div>
+
+            <div class="subject-card">
+                <h4>🔬 Science (विज्ञान)</h4>
+                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">नोट्स जल्द आ रहे हैं</p>
+                <span style="font-size: 12px; color: #888;">जल्द उपलब्ध होगा</span>
+            </div>
+
+            <div class="subject-card">
+                <h4>💡 Reasoning (तर्कशक्ति)</h4>
+                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">नोट्स जल्द आ रहे हैं</p>
+                <span style="font-size: 12px; color: #888;">जल्द उपलब्ध होगा</span>
+            </div>
+
+            <div class="subject-card">
+                <h4>🌐 General Knowledge / GS</h4>
+                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">नोट्स जल्द आ रहे हैं</p>
+                <span style="font-size: 12px; color: #888;">जल्द उपलब्ध होगा</span>
+            </div>
+
         </div>
     </div>
 
@@ -77,10 +98,10 @@
     <div class="container">
         <h2>🌟 हमारी सुविधाएं</h2>
         <div class="grid-container">
-            <div class="grid-item">✅ अनुभवी एवं कुशल शिक्षक</div>
-            <div class="grid-item">✅ टेस्ट सीरीज़ एवं प्रैक्टिस सेट्स</div>
-            <div class="grid-item">✅ स्टडी मटेरियल एवं PDF नोट्स</div>
-            <div class="grid-item">✅ स्पेशल डाउट सेशन</div>
+            <div class="subject-card">✅ अनुभवी एवं कुशल शिक्षक</div>
+            <div class="subject-card">✅ टेस्ट सीरीज़ एवं प्रैक्टिस सेट्स</div>
+            <div class="subject-card">✅ स्टडी मटेरियल एवं PDF नोट्स</div>
+            <div class="subject-card">✅ स्पेशल डाउट सेशन</div>
         </div>
     </div>
 
