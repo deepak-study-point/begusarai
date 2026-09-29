@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak Study Point Begusarai</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; text-align: center; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; text-align: center; color: #333; }
         header { background-color: #003366; color: white; padding: 25px 15px; }
         header h1 { margin: 0; font-size: 26px; }
         header p { margin: 5px 0 0; font-size: 15px; opacity: 0.9; }
+        
         .container { max-width: 750px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
-        .btn { display: inline-block; padding: 12px 25px; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; }
+        
+        .btn-group { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
+        .btn { display: inline-block; padding: 12px 20px; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 15px; }
         .call { background-color: #007bff; }
         .wa { background-color: #25D366; }
+        .sms { background-color: #ff9900; }
+        
+        .grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px; }
+        .grid-item { background: #eef2f5; padding: 12px 20px; border-radius: 6px; font-weight: bold; font-size: 16px; color: #003366; border-left: 4px solid #007bff; }
+        
         iframe { width: 100%; height: 650px; border: none; border-radius: 8px; }
     </style>
 </head>
@@ -24,20 +31,44 @@
         <p>बेगूसराय का सर्वश्रेष्ठ अध्ययन केंद्र</p>
     </header>
 
-    <!-- संपर्क बटन सेक्शन -->
+    <!-- संपर्क बटन (Call, WhatsApp & SMS) -->
     <div class="container">
-        <h2>📞 संपर्क करें</h2>
+        <h2>📞 सीधा संपर्क करें</h2>
         <div class="btn-group">
-            <!-- नीचे 9999999999 की जगह अपना मोबाइल नंबर डालें -->
             <a href="tel:+919430653965" class="btn call">📞 कॉल करें</a>
             <a href="https://wa.me/919430653965" class="btn wa" target="_blank">💬 व्हाट्सएप करें</a>
+            <a href="sms:+919430653965" class="btn sms">✉️ SMS करें</a>
         </div>
     </div>
 
-    <!-- गूगल फॉर्म सेक्शन -->
+    <!-- उपलब्ध विषय (Subjects) -->
     <div class="container">
-        <h2>📝 एडमिशन / इंक्वायरी फॉर्म</h2>
-        <p>नीचे अपना नाम और मोबाइल नंबर भरें, आपका विवरण हमारे पास सुरक्षित सेव हो जाएगा:</p>
+        <h2>📚 उपलब्ध विषय एवं तैयारी</h2>
+        <div class="grid-container">
+            <div class="grid-item">📖 Mathematics (गणित)</div>
+            <div class="grid-item">🔬 Science (विज्ञान)</div>
+            <div class="grid-item">💡 Reasoning (तर्कशक्ति)</div>
+            <div class="grid-item">🌐 General Knowledge / GS</div>
+            <div class="grid-item">💻 Computer Science</div>
+            <div class="grid-item">🎯 Competitive Exams (Railway/SSC/BPSC)</div>
+        </div>
+    </div>
+
+    <!-- कोचिंग की विशेषताएं -->
+    <div class="container">
+        <h2>🌟 हमारी सुविधाएं</h2>
+        <div class="grid-container">
+            <div class="grid-item">✅ अनुभवी एवं कुशल शिक्षक</div>
+            <div class="grid-item">✅ टेस्ट सीरीज़ एवं प्रैक्टिस सेट्स</div>
+            <div class="grid-item">✅ स्टडी मटेरियल एवं PDF नोट्स</div>
+            <div class="grid-item">✅ स्पेशल डाउट सेशन</div>
+        </div>
+    </div>
+
+    <!-- छात्र पूछताछ / सवाल पूछें (Google Form Integrates with Google Sheet) -->
+    <div class="container">
+        <h2>📝 एडमिशन एवं सवाल (Enquiry Form)</h2>
+        <p>नीचे अपना सवाल या एडमिशन का विवरण भरें। आपका डेटा हमारी गूगल शीट में दर्ज हो जाएगा:</p>
         <iframe src="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform?embedded=true">Loading…</iframe>
     </div>
 
