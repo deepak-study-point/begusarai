@@ -12,6 +12,13 @@
         
         .container { max-width: 750px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         
+        /* नोटिस सेक्शन की स्टाइलिंग */
+        .notice-box { background-color: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; text-align: left; border-radius: 6px; }
+        .notice-box h3 { margin-top: 0; color: #856404; display: flex; align-items: center; gap: 8px; }
+        .notice-list { padding-left: 20px; margin-bottom: 0; }
+        .notice-list li { margin-bottom: 10px; line-height: 1.5; font-size: 15px; }
+        .notice-link { color: #0056b3; font-weight: bold; text-decoration: underline; }
+        
         .btn-group { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
         .btn { display: inline-block; padding: 12px 20px; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 15px; }
         .call { background-color: #007bff; }
@@ -31,6 +38,22 @@
         <h1>Deepak Study Point Begusarai</h1>
         <p>बेगूसराय का सर्वश्रेष्ठ अध्ययन केंद्र</p>
     </header>
+
+    <!-- 📢 नया नोटिस एवं लिंक कॉलम -->
+    <div class="container">
+        <div class="notice-box">
+            <h3>📢 महत्वपूर्ण सूचना / ताज़ा जानकारी (Notice Board)</h3>
+            <ul class="notice-list">
+                <li>
+                    📌 **नया बैच प्रारंभ:** नए बैच की जानकारी के लिए तुरंत संपर्क करें।
+                </li>
+                <li>
+                    📄 **स्टडी मटेरियल / PDF लिंक:** यहाँ क्लिक करके नया नोट्स डाउनलोड करें 👉 
+                    <a href="https://drive.google.com" target="_blank" class="notice-link">यहाँ क्लिक करें (Click Here)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!-- सीधा संपर्क -->
     <div class="container">
