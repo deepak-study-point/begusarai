@@ -20,7 +20,7 @@
         .section-card { background: #ffffff; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
         .section-title { font-size: 20px; color: #0d3b66; font-weight: 700; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; text-align: center; }
 
-        /* 1. डेली नोटिस बोर्ड */
+        /* 1. रोज का नोटिस बोर्ड */
         .notice-board { background: #fff8e6; border: 2px dashed #f6ad55; border-radius: 10px; padding: 18px; }
         .notice-title { font-weight: 700; color: #c05621; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 18px; margin-bottom: 10px; }
         .notice-board ul { list-style: none; padding: 0; text-align: left; }
@@ -35,24 +35,33 @@
         .btn-wa { background-color: #25d366; }
         .btn-sms { background-color: #ed8936; }
 
-        /* 3. डेली क्विज़ सेक्शन */
-        .quiz-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 1px solid #90caf9; border-radius: 10px; padding: 20px; text-align: center; }
-        .quiz-btn { display: inline-block; background-color: #1565c0; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 16px; margin-top: 10px; }
+        /* 3. लिंक शेयरिंग कॉलम (New Feature) */
+        .link-list { list-style: none; padding: 0; text-align: left; }
+        .link-item { background: #f7fafc; border: 1px solid #e2e8f0; border-left: 5px solid #3182ce; padding: 12px 16px; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .link-desc { font-size: 15px; font-weight: 600; color: #2d3748; }
+        .open-link-btn { background-color: #3182ce; color: white; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+        .open-link-btn:hover { background-color: #2b6cb0; }
 
-        /* 4. विषयवार अलग-अलग स्टडी मटेरियल */
+        /* 4. डेली क्विज़ बॉक्स */
+        .quiz-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 2px solid #64b5f6; border-radius: 10px; padding: 20px; text-align: center; }
+        .quiz-title { font-size: 18px; color: #0d3b66; font-weight: 700; margin-bottom: 5px; }
+        .quiz-btn { display: inline-block; background-color: #1565c0; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 16px; margin-top: 12px; box-shadow: 0 4px 8px rgba(21, 101, 192, 0.3); }
+        .quiz-btn:hover { background-color: #0d47a1; }
+
+        /* 5. विषयवार अलग-अलग स्टडी मटेरियल */
         .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
         .subject-box { background: #f8fafc; border: 1px solid #cbd5e0; border-radius: 10px; padding: 18px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
         .subject-box h4 { font-size: 17px; color: #1a202c; margin-bottom: 6px; }
         .subject-box p { font-size: 13px; color: #718096; margin-bottom: 12px; }
         .download-btn { background-color: #2f855a; color: white; text-decoration: none; padding: 9px 14px; border-radius: 6px; font-weight: 600; font-size: 13px; display: inline-block; }
-        .coming-soon { background-color: #e2e8f0; color: #718096; padding: 8px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; }
 
-        /* 5. विशेषताएं */
+        /* 6. विशेषताएं */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
         .feature-item { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center; }
 
-        /* 6. ऑनलाइन फ़ॉर्म */
-        .form-btn-large { display: block; background: linear-gradient(135deg, #6b46c1, #553c9a); color: white; text-decoration: none; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 18px; text-align: center; margin: 15px 0; }
+        /* 7. ऑनलाइन फ़ॉर्म व डॉक्यूमेंट अपलोड */
+        .form-info-text { text-align: center; font-size: 15px; color: #2d3748; font-weight: 600; margin-bottom: 10px; }
+        .form-btn-large { display: block; background: linear-gradient(135deg, #6b46c1, #553c9a); color: white; text-decoration: none; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 18px; text-align: center; margin: 15px 0; box-shadow: 0 4px 10px rgba(107, 70, 193, 0.3); }
         iframe { width: 100%; height: 650px; border: 1px solid #e2e8f0; border-radius: 10px; margin-top: 15px; }
 
         footer { text-align: center; padding: 20px; font-size: 13px; color: #718096; }
@@ -67,19 +76,18 @@
 
     <div class="main-wrapper">
 
-        <!-- 1. रोज नोटिस डालने की जगह (Daily Notice Board) -->
+        <!-- 1. रोज का नोटिस बोर्ड -->
         <div class="section-card">
             <div class="notice-board">
                 <div class="notice-title">📢 रोज का नोटिस / Daily Notice Board</div>
                 <ul>
                     <li><span class="date-badge">TODAY</span> 📌 <strong>नया बैच अलर्ट:</strong> सभी प्रतियोगी परीक्षाओं के लिए नए बैच की शुरुआत हो चुकी है।</li>
                     <li><span class="date-badge">NEW</span> 📄 <strong>Math Class Notes:</strong> HCF & LCM Class Sheet की PDF अपडेट कर दी गई है। नीचे से डाउनलोड करें।</li>
-                    <!-- रोज नया नोटिस जोड़ने के लिए ऊपर जैसी एक नई लाइन <li> जोड़ें -->
                 </ul>
             </div>
         </div>
 
-        <!-- 2. संपर्क करें -->
+        <!-- 2. सीधा संपर्क -->
         <div class="section-card">
             <h3 class="section-title">📞 सीधा संपर्क करें</h3>
             <div class="contact-grid">
@@ -89,18 +97,41 @@
             </div>
         </div>
 
-        <!-- 3. डेली क्विज़ कॉलम (Daily Online Quiz) -->
+        <!-- 3. महत्वपूर्ण लिंक्स एवं साइट्स (Important Links & Songs Column) -->
         <div class="section-card">
-            <h3 class="section-title">🎯 Daily Quiz / ऑनलाइन टेस्ट</h3>
+            <h3 class="section-title">🔗 महत्वपूर्ण लिंक्स एवं उपयोगी साइट्स</h3>
+            <ul class="link-list">
+                <!-- लिंक 1: गाना / म्यूज़िक वीडियो -->
+                <li class="link-item">
+                    <span class="link-desc">🎵 <strong>मनोरंजन / गाना:</strong> यादव जी का सुपरहिट लोकगीत (Song)</span>
+                    <a href="https://www.youtube.com" target="_blank" class="open-link-btn">▶ लिंक खोलें</a>
+                </li>
+
+                <!-- लिंक 2: कोई वेबसाइट या पोर्टल -->
+                <li class="link-item">
+                    <span class="link-desc">🌐 <strong>ऑफिशियल वेबसाइट:</strong> BPSC / Railway जॉब पोर्टल लिंक</span>
+                    <a href="https://bpsc.bih.nic.in" target="_blank" class="open-link-btn">🔗 साइट पर जाएँ</a>
+                </li>
+
+                <!-- लिंक 3: नया लिंक जोड़ने का उदाहरण -->
+                <li class="link-item">
+                    <span class="link-desc">🎥 <strong>यूट्यूब क्लास:</strong> मैथ मैराथन क्लास ऑनलाइन</span>
+                    <a href="https://www.youtube.com" target="_blank" class="open-link-btn">▶ वीडियो देखें</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 4. डेली क्विज़ / ऑनलाइन टेस्ट बॉक्स -->
+        <div class="section-card">
+            <h3 class="section-title">🧠 ऑनलाइन क्विज़ एवं टेस्ट (Daily Quiz)</h3>
             <div class="quiz-box">
-                <h4 style="color: #0d3b66; font-size: 18px;">📝 आज का डेली क्विज़ अटेंड करें</h4>
-                <p style="font-size: 14px; color: #4a5568; margin-top: 5px;">अपनी तैयारी को बेहतर बनाने के लिए रोज़ाना ऑनलाइन टेस्ट दें।</p>
-                <!-- यहाँ Google Form Quiz का लिंक दिया गया है -->
+                <div class="quiz-title">🎯 आज का क्विज़ अटेंड करें</div>
+                <p style="font-size: 14px; color: #4a5568;">अपनी तैयारी और ज्ञान को परखने के लिए नीचे दिए गए बटन पर क्लिक करके आज का क्विज़ दें:</p>
                 <a href="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform" target="_blank" class="quiz-btn">🚀 Start Daily Quiz (क्विज़ शुरू करें)</a>
             </div>
         </div>
 
-        <!-- 4. विषयवार अलग-अलग स्टडी मटेरियल (हर Subject का अलग कॉलम और फ़ाइल) -->
+        <!-- 5. विषयवार अलग-अलग स्टडी मटेरियल -->
         <div class="section-card">
             <h3 class="section-title">📚 विषयवार स्टडी मटेरियल एवं PDF नोट्स</h3>
             <div class="subject-grid">
@@ -120,7 +151,6 @@
                         <h4>🔬 Science (विज्ञान)</h4>
                         <p>सामान्य विज्ञान नोट्स</p>
                     </div>
-                    <!-- यहाँ अपनी Science PDF का लिंक href="..." में डालें -->
                     <a href="यहाँ_Science_PDF_का_Drive_Link_डाले" target="_blank" class="download-btn" style="background-color: #3182ce;">📥 Science PDF डाउनलोड करें</a>
                 </div>
 
@@ -130,7 +160,6 @@
                         <h4>💡 Reasoning (तर्कशक्ति)</h4>
                         <p>रीज़निंग प्रैक्टिस सेट्स</p>
                     </div>
-                    <!-- यहाँ अपनी Reasoning PDF का लिंक href="..." में डालें -->
                     <a href="यहाँ_Reasoning_PDF_का_Drive_Link_डाले" target="_blank" class="download-btn" style="background-color: #d69e2e;">📥 Reasoning PDF डाउनलोड करें</a>
                 </div>
 
@@ -140,14 +169,13 @@
                         <h4>🌐 GK / GS</h4>
                         <p>सामान्य ज्ञान एवं करंट अफेयर्स</p>
                     </div>
-                    <!-- यहाँ अपनी GK PDF का लिंक href="..." में डालें -->
                     <a href="यहाँ_GK_PDF_का_Drive_Link_डाले" target="_blank" class="download-btn" style="background-color: #805ad5;">📥 GK PDF डाउनलोड करें</a>
                 </div>
 
             </div>
         </div>
 
-        <!-- 5. कोचिंग की सुविधाएं -->
+        <!-- 6. कोचिंग की विशेषताएं -->
         <div class="section-card">
             <h3 class="section-title">🌟 हमारी मुख्य विशेषताएं</h3>
             <div class="features-grid">
@@ -158,12 +186,13 @@
             </div>
         </div>
 
-        <!-- 6. ऑनलाइन फ़ॉर्म एवं फाइल अपलोड -->
+        <!-- 7. ऑनलाइन फॉर्म व आवश्यक डॉक्यूमेंट जमा करने का सेक्शन -->
         <div class="section-card">
-            <h3 class="section-title">📝 एडमिशन फॉर्म एवं डॉक्यूमेंट जमा करें</h3>
-            <p style="text-align: center; font-size: 14px; color: #4a5568;">ऑनलाइन फॉर्म भरने या डॉक्यूमेंट्स अपलोड करने के लिए बटन पर क्लिक करें:</p>
+            <h3 class="section-title">📝 ऑनलाइन फॉर्म एवं डॉक्यूमेंट अपलोड</h3>
+            <p class="form-info-text">📌 आप यहाँ से कोई भी फॉर्म भरवा सकते हैं एवं आवश्यक डॉक्यूमेंट्स भेज सकते हैं।</p>
+            <p style="text-align: center; font-size: 14px; color: #4a5568;">फॉर्म भरने या अपनी फोटो/डॉक्यूमेंट भेजने के लिए नीचे बटन पर क्लिक करें:</p>
             
-            <a href="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform" target="_blank" class="form-btn-large">📄 ऑनलाइन फॉर्म भरें एवं फाइल अपलोड करें</a>
+            <a href="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform" target="_blank" class="form-btn-large">📄 ऑनलाइन फॉर्म भरें एवं आवश्यक डॉक्यूमेंट भेजें</a>
 
             <iframe src="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform?embedded=true">Loading…</iframe>
         </div>
