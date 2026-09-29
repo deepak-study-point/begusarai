@@ -4,117 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak Study Point Begusarai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; text-align: center; color: #333; }
-        header { background-color: #003366; color: white; padding: 25px 15px; }
-        header h1 { margin: 0; font-size: 26px; }
-        header p { margin: 5px 0 0; font-size: 15px; opacity: 0.9; }
-        
-        .container { max-width: 750px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        
-        /* नोटिस बोर्ड स्टाइल */
-        .notice-box { background-color: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; text-align: left; border-radius: 6px; }
-        .notice-box h3 { margin-top: 0; color: #856404; display: flex; align-items: center; gap: 8px; }
-        .notice-list { padding-left: 20px; margin-bottom: 0; }
-        .notice-list li { margin-bottom: 10px; line-height: 1.5; font-size: 15px; }
-        
-        .btn-group { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
-        .btn { display: inline-block; padding: 12px 20px; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 15px; }
-        .call { background-color: #007bff; }
-        .wa { background-color: #25D366; }
-        .sms { background-color: #ff9900; }
-        .form-btn { background-color: #673ab7; font-size: 18px; padding: 15px 30px; display: inline-block; }
-        
-        /* सब्जेक्ट कार्ड्स की स्टाइल */
-        .grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px; }
-        .subject-card { background: #ffffff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; width: 220px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .subject-card h4 { margin: 0 0 10px 0; color: #003366; font-size: 16px; }
-        .download-btn { display: inline-block; background-color: #28a745; color: white; padding: 8px 12px; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: bold; }
-        
-        iframe { width: 100%; height: 700px; border: none; border-radius: 8px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f4f8; color: #2d3748; line-height: 1.6; }
+
+        /* हेडर */
+        header { background: linear-gradient(135deg, #0d3b66, #001f3f); color: white; padding: 35px 20px; text-align: center; border-bottom: 5px solid #e63946; }
+        header h1 { font-size: 28px; font-weight: 700; }
+        header p { font-size: 16px; margin-top: 6px; color: #e0e6ed; }
+
+        .main-wrapper { max-width: 850px; margin: 25px auto; padding: 0 15px; }
+
+        /* सेक्शन्स (कार्ड्स) */
+        .section-card { background: #ffffff; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .section-title { font-size: 20px; color: #0d3b66; font-weight: 700; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; text-align: center; }
+
+        /* 1. डेली नोटिस बोर्ड */
+        .notice-board { background: #fff8e6; border: 2px dashed #f6ad55; border-radius: 10px; padding: 18px; }
+        .notice-title { font-weight: 700; color: #c05621; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 18px; margin-bottom: 10px; }
+        .notice-board ul { list-style: none; padding: 0; text-align: left; }
+        .notice-board li { padding: 8px 0; border-bottom: 1px solid #fbd38d; font-size: 15px; }
+        .notice-board li:last-child { border-bottom: none; }
+        .date-badge { background-color: #e2e8f0; font-size: 11px; padding: 2px 6px; border-radius: 4px; color: #4a5568; margin-right: 5px; font-weight: bold; }
+
+        /* 2. संपर्क बटन */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 10px; }
+        .contact-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 8px; color: white; text-decoration: none; font-weight: 600; font-size: 15px; }
+        .btn-call { background-color: #2b6cb0; }
+        .btn-wa { background-color: #25d366; }
+        .btn-sms { background-color: #ed8936; }
+
+        /* 3. डेली क्विज़ सेक्शन */
+        .quiz-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 1px solid #90caf9; border-radius: 10px; padding: 20px; text-align: center; }
+        .quiz-btn { display: inline-block; background-color: #1565c0; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 16px; margin-top: 10px; }
+
+        /* 4. विषयवार अलग-अलग स्टडी मटेरियल */
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+        .subject-box { background: #f8fafc; border: 1px solid #cbd5e0; border-radius: 10px; padding: 18px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+        .subject-box h4 { font-size: 17px; color: #1a202c; margin-bottom: 6px; }
+        .subject-box p { font-size: 13px; color: #718096; margin-bottom: 12px; }
+        .download-btn { background-color: #2f855a; color: white; text-decoration: none; padding: 9px 14px; border-radius: 6px; font-weight: 600; font-size: 13px; display: inline-block; }
+        .coming-soon { background-color: #e2e8f0; color: #718096; padding: 8px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+
+        /* 5. विशेषताएं */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+        .feature-item { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center; }
+
+        /* 6. ऑनलाइन फ़ॉर्म */
+        .form-btn-large { display: block; background: linear-gradient(135deg, #6b46c1, #553c9a); color: white; text-decoration: none; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 18px; text-align: center; margin: 15px 0; }
+        iframe { width: 100%; height: 650px; border: 1px solid #e2e8f0; border-radius: 10px; margin-top: 15px; }
+
+        footer { text-align: center; padding: 20px; font-size: 13px; color: #718096; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Deepak Study Point Begusarai</h1>
-        <p>बेगूसराय का सर्वश्रेष्ठ अध्ययन केंद्र</p>
+        <p>बेगूसराय का सर्वश्रेष्ठ एवं भरोसेमंद अध्ययन केंद्र</p>
     </header>
 
-    <!-- 📢 महत्वपूर्ण सूचना / नोटिस बोर्ड -->
-    <div class="container">
-        <div class="notice-box">
-            <h3>📢 महत्वपूर्ण सूचना / ताज़ा जानकारी (Notice Board)</h3>
-            <ul class="notice-list">
-                <li>📌 <strong>नया बैच प्रारंभ:</strong> नए बैच की जानकारी के लिए तुरंत संपर्क करें।</li>
-            </ul>
-        </div>
-    </div>
+    <div class="main-wrapper">
 
-    <!-- सीधा संपर्क -->
-    <div class="container">
-        <h2>📞 सीधा संपर्क करें</h2>
-        <div class="btn-group">
-            <a href="tel:+919430653965" class="btn call">📞 कॉल करें</a>
-            <a href="https://wa.me/919430653965" class="btn wa" target="_blank">💬 व्हाट्सएप करें</a>
-            <a href="sms:+919430653965" class="btn sms">✉️ SMS करें</a>
+        <!-- 1. रोज नोटिस डालने की जगह (Daily Notice Board) -->
+        <div class="section-card">
+            <div class="notice-board">
+                <div class="notice-title">📢 रोज का नोटिस / Daily Notice Board</div>
+                <ul>
+                    <li><span class="date-badge">TODAY</span> 📌 <strong>नया बैच अलर्ट:</strong> सभी प्रतियोगी परीक्षाओं के लिए नए बैच की शुरुआत हो चुकी है।</li>
+                    <li><span class="date-badge">NEW</span> 📄 <strong>Math Class Notes:</strong> HCF & LCM Class Sheet की PDF अपडेट कर दी गई है। नीचे से डाउनलोड करें।</li>
+                    <!-- रोज नया नोटिस जोड़ने के लिए ऊपर जैसी एक नई लाइन <li> जोड़ें -->
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <!-- 📚 विषय अनुसार स्टडी मटेरियल (PDFs) -->
-    <div class="container">
-        <h2>📚 डाउनलोड करें विषयवार नोट्स (PDF)</h2>
-        <div class="grid-container">
+        <!-- 2. संपर्क करें -->
+        <div class="section-card">
+            <h3 class="section-title">📞 सीधा संपर्क करें</h3>
+            <div class="contact-grid">
+                <a href="tel:+919430653965" class="contact-btn btn-call">📞 कॉल करें</a>
+                <a href="https://wa.me/919430653965" class="contact-btn btn-wa" target="_blank">💬 व्हाट्सएप करें</a>
+                <a href="sms:+919430653965" class="contact-btn btn-sms">✉️ SMS करें</a>
+            </div>
+        </div>
+
+        <!-- 3. डेली क्विज़ कॉलम (Daily Online Quiz) -->
+        <div class="section-card">
+            <h3 class="section-title">🎯 Daily Quiz / ऑनलाइन टेस्ट</h3>
+            <div class="quiz-box">
+                <h4 style="color: #0d3b66; font-size: 18px;">📝 आज का डेली क्विज़ अटेंड करें</h4>
+                <p style="font-size: 14px; color: #4a5568; margin-top: 5px;">अपनी तैयारी को बेहतर बनाने के लिए रोज़ाना ऑनलाइन टेस्ट दें।</p>
+                <!-- यहाँ Google Form Quiz का लिंक दिया गया है -->
+                <a href="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform" target="_blank" class="quiz-btn">🚀 Start Daily Quiz (क्विज़ शुरू करें)</a>
+            </div>
+        </div>
+
+        <!-- 4. विषयवार अलग-अलग स्टडी मटेरियल (हर Subject का अलग कॉलम और फ़ाइल) -->
+        <div class="section-card">
+            <h3 class="section-title">📚 विषयवार स्टडी मटेरियल एवं PDF नोट्स</h3>
+            <div class="subject-grid">
+                
+                <!-- 1. Mathematics (गणित) -->
+                <div class="subject-box">
+                    <div>
+                        <h4>📖 Mathematics (गणित)</h4>
+                        <p>HCF & LCM Class Sheet</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1g-KYEV83gAlVI2U57daI1Y9IZqFyuuEs/view?usp=sharing" target="_blank" class="download-btn">📥 Math PDF डाउनलोड करें</a>
+                </div>
+
+                <!-- 2. Science (विज्ञान) -->
+                <div class="subject-box">
+                    <div>
+                        <h4>🔬 Science (विज्ञान)</h4>
+                        <p>सामान्य विज्ञान नोट्स</p>
+                    </div>
+                    <!-- यहाँ अपनी Science PDF का लिंक href="..." में डालें -->
+                    <a href="यहाँ_Science_PDF_का_Drive_Link_डाले" target="_blank" class="download-btn" style="background-color: #3182ce;">📥 Science PDF डाउनलोड करें</a>
+                </div>
+
+                <!-- 3. Reasoning (तर्कशक्ति) -->
+                <div class="subject-box">
+                    <div>
+                        <h4>💡 Reasoning (तर्कशक्ति)</h4>
+                        <p>रीज़निंग प्रैक्टिस सेट्स</p>
+                    </div>
+                    <!-- यहाँ अपनी Reasoning PDF का लिंक href="..." में डालें -->
+                    <a href="यहाँ_Reasoning_PDF_का_Drive_Link_डाले" target="_blank" class="download-btn" style="background-color: #d69e2e;">📥 Reasoning PDF डाउनलोड करें</a>
+                </div>
+
+                <!-- 4. GK / GS -->
+                <div class="subject-box">
+                    <div>
+                        <h4>🌐 GK / GS</h4>
+                        <p>सामान्य ज्ञान एवं करंट अफेयर्स</p>
+                    </div>
+                    <!-- यहाँ अपनी GK PDF का लिंक href="..." में डालें -->
+                    <a href="यहाँ_GK_PDF_का_Drive_Link_डाले" target="_blank" class="download-btn" style="background-color: #805ad5;">📥 GK PDF डाउनलोड करें</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 5. कोचिंग की सुविधाएं -->
+        <div class="section-card">
+            <h3 class="section-title">🌟 हमारी मुख्य विशेषताएं</h3>
+            <div class="features-grid">
+                <div class="feature-item">👨‍🏫 अनुभवी एवं कुशल शिक्षक</div>
+                <div class="feature-item">📝 नियमित टेस्ट सीरीज़</div>
+                <div class="feature-item">📚 मुफ़्त PDF नोट्स</div>
+                <div class="feature-item">💡 स्पेशल डाउट क्लास</div>
+            </div>
+        </div>
+
+        <!-- 6. ऑनलाइन फ़ॉर्म एवं फाइल अपलोड -->
+        <div class="section-card">
+            <h3 class="section-title">📝 एडमिशन फॉर्म एवं डॉक्यूमेंट जमा करें</h3>
+            <p style="text-align: center; font-size: 14px; color: #4a5568;">ऑनलाइन फॉर्म भरने या डॉक्यूमेंट्स अपलोड करने के लिए बटन पर क्लिक करें:</p>
             
-            <!-- Mathematics Box (आपका HCF & LCM PDF लिंक यहाँ लग गया है) -->
-            <div class="subject-card">
-                <h4>📖 Mathematics (गणित)</h4>
-                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">HCF & LCM Class Sheet</p>
-                <a href="https://drive.google.com/file/d/1g-KYEV83gAlVI2U57daI1Y9IZqFyuuEs/view?usp=sharing" target="_blank" class="download-btn">📥 PDF डाउनलोड करें</a>
-            </div>
+            <a href="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform" target="_blank" class="form-btn-large">📄 ऑनलाइन फॉर्म भरें एवं फाइल अपलोड करें</a>
 
-            <div class="subject-card">
-                <h4>🔬 Science (विज्ञान)</h4>
-                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">नोट्स जल्द आ रहे हैं</p>
-                <span style="font-size: 12px; color: #888;">जल्द उपलब्ध होगा</span>
-            </div>
-
-            <div class="subject-card">
-                <h4>💡 Reasoning (तर्कशक्ति)</h4>
-                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">नोट्स जल्द आ रहे हैं</p>
-                <span style="font-size: 12px; color: #888;">जल्द उपलब्ध होगा</span>
-            </div>
-
-            <div class="subject-card">
-                <h4>🌐 General Knowledge / GS</h4>
-                <p style="font-size: 12px; color: #666; margin-bottom: 10px;">नोट्स जल्द आ रहे हैं</p>
-                <span style="font-size: 12px; color: #888;">जल्द उपलब्ध होगा</span>
-            </div>
-
+            <iframe src="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform?embedded=true">Loading…</iframe>
         </div>
+
     </div>
 
-    <!-- सुविधाएं -->
-    <div class="container">
-        <h2>🌟 हमारी सुविधाएं</h2>
-        <div class="grid-container">
-            <div class="subject-card">✅ अनुभवी एवं कुशल शिक्षक</div>
-            <div class="subject-card">✅ टेस्ट सीरीज़ एवं प्रैक्टिस सेट्स</div>
-            <div class="subject-card">✅ स्टडी मटेरियल एवं PDF नोट्स</div>
-            <div class="subject-card">✅ स्पेशल डाउट सेशन</div>
-        </div>
-    </div>
-
-    <!-- एडमिशन और फाइल अपलोड फॉर्म -->
-    <div class="container">
-        <h2>📝 एडमिशन फॉर्म एवं डॉक्यूमेंट अपलोड करें</h2>
-        <p>ऑनलाइन फॉर्म भरने और अपने डॉक्यूमेंट/फोटो अपलोड करने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
-        <br>
-        <a href="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform" target="_blank" class="btn form-btn">📄 ऑनलाइन फॉर्म भरें एवं फाइल भेजें</a>
-        <br><br>
-        <p style="font-size: 13px; color: #666;">(यदि नीचे फॉर्म नहीं दिख रहा है, तो ऊपर दिए गए बटन पर क्लिक करके फॉर्म भरें)</p>
-        <iframe src="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform?embedded=true">Loading…</iframe>
-    </div>
+    <footer>
+        © Deepak Study Point Begusarai | सर्वाधिकार सुरक्षित
+    </footer>
 
 </body>
 </html>
