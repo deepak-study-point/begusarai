@@ -17,11 +17,12 @@
         .call { background-color: #007bff; }
         .wa { background-color: #25D366; }
         .sms { background-color: #ff9900; }
+        .form-btn { background-color: #673ab7; font-size: 18px; padding: 15px 30px; display: inline-block; }
         
         .grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px; }
         .grid-item { background: #eef2f5; padding: 12px 20px; border-radius: 6px; font-weight: bold; font-size: 16px; color: #003366; border-left: 4px solid #007bff; }
         
-        iframe { width: 100%; height: 650px; border: none; border-radius: 8px; }
+        iframe { width: 100%; height: 700px; border: none; border-radius: 8px; }
     </style>
 </head>
 <body>
@@ -31,7 +32,7 @@
         <p>बेगूसराय का सर्वश्रेष्ठ अध्ययन केंद्र</p>
     </header>
 
-    <!-- संपर्क बटन (Call, WhatsApp & SMS) -->
+    <!-- सीधा संपर्क -->
     <div class="container">
         <h2>📞 सीधा संपर्क करें</h2>
         <div class="btn-group">
@@ -41,7 +42,7 @@
         </div>
     </div>
 
-    <!-- उपलब्ध विषय (Subjects) -->
+    <!-- उपलब्ध विषय -->
     <div class="container">
         <h2>📚 उपलब्ध विषय एवं तैयारी</h2>
         <div class="grid-container">
@@ -54,7 +55,7 @@
         </div>
     </div>
 
-    <!-- कोचिंग की विशेषताएं -->
+    <!-- सुविधाएं -->
     <div class="container">
         <h2>🌟 हमारी सुविधाएं</h2>
         <div class="grid-container">
@@ -65,10 +66,14 @@
         </div>
     </div>
 
-    <!-- छात्र पूछताछ / सवाल पूछें (Google Form Integrates with Google Sheet) -->
+    <!-- एडमिशन और फाइल अपलोड फॉर्म -->
     <div class="container">
-        <h2>📝 एडमिशन एवं सवाल (Enquiry Form)</h2>
-        <p>नीचे अपना सवाल या एडमिशन का विवरण भरें। आपका डेटा हमारी गूगल शीट में दर्ज हो जाएगा:</p>
+        <h2>📝 एडमिशन फॉर्म एवं डॉक्यूमेंट अपलोड करें</h2>
+        <p>ऑनलाइन फॉर्म भरने और अपने डॉक्यूमेंट/फोटो अपलोड करने के लिए नीचे दिए गए बटन पर क्लिक करें:</p>
+        <br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfh8vYx8K73YIuM1mX1f3s-placeholder/viewform" target="_blank" class="btn form-btn">📄 ऑनलाइन फॉर्म भरें एवं फाइल भेजें</a>
+        <br><br>
+        <p style="font-size: 13px; color: #666;">(यदि नीचे फॉर्म नहीं दिख रहा है, तो ऊपर दिए गए बटन पर क्लिक करके फॉर्म भरें)</p>
         <iframe src="https://docs.google.com/forms/d/1yj_dtUUBXHtLe1a86p4JYpVLR0wXeniGD4q7_d0gsCA/viewform?embedded=true">Loading…</iframe>
     </div>
 
